@@ -14,8 +14,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\PersonCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FirstContentPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FirstListViewPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FirstXamlPage.xaml.cs">
+      <DependentUpon>FirstXamlPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FirstXamlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
