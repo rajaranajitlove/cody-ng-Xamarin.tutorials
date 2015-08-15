@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinFormDemo.XamlStackLayoutPage">
+	<StackLayout Orientation="Vertical" 
+	             Padding="30"
+	             Spacing="10">
+      <Label Text="Simple StackLayout" Font="Small"/>
+
+      <Label Text="Name" Font="Large"/>
+	  <Entry x:Name="entryName" />
+
+	  <Label Text="Street" Font="Large"/>
+	  <Entry x:Name="entryStreet" />
+
+	  <Label Text="City" Font="Large"/>
+	  <Entry x:Name="entryCity" />
+
+	  <Label Text="State" Font="Large"/>
+	  <Entry x:Name="entryState" />
+
+	  <Label Text="Zip" Font="Large"/>
+	  <Entry x:Name="entryZip" />
+
+	  <Label Text="Home Phone" Font="Large"/>
+	  <Entry x:Name="entryHomePhone" />
+
+	  <Label Text="Cell Phone" Font="Large"/>
+	  <Entry x:Name="entryCellPhone" />
+
+	</StackLayout>
+</ContentPage>
