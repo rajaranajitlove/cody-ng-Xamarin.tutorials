@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F2D2E6B3-5DDE-438E-9601-2C3E2508147C}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>XamarinFormDemo</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)XamarinFormDemo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Person.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PersonCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FirstContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FirstListViewPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+  </ItemGroup>
+</Project>
