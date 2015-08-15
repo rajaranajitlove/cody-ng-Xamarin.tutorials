@@ -5,6 +5,6 @@ Environment:<br>
 Xamarin Studio version 5.9.5<br>
 
 <ol>
- <li><b>XamarinFormDemo</b> 
+ <li><b>XamarinFormDemo</b> - Xamarin Form codes are in "XamarinFormDemo\XamarinFormDemo" folder.
  </li>
 </ol>
