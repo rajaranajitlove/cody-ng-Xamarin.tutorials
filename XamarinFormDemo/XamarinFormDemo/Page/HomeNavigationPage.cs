@@ -24,19 +24,45 @@ namespace XamarinFormDemo
                 Navigation.PushAsync ( new PersonMasterDetailPage() );
             };
 
-            var btn3 = new Button (){ Text = "" };
+            var btn3 = new Button (){ Text = "Master/Detail (binding)" };
             btn3.Clicked += (object sender, EventArgs e)  => 
             {
+                Navigation.PushAsync (new PersonMasterDetailDB() );
             };
 
-            var btn4 = new Button (){ Text = "" };
+            var btn4 = new Button (){ Text = "Tabbed" };
             btn4.Clicked += (object sender, EventArgs e)  => 
             {
+                var tabpage = new TabbedPage ();
+                tabpage.Title = "Persons";
+                foreach(var p in PersonEx.Get ())
+                {
+                    var page = new PersonExPageDB ();
+                    page.BindingContext = p;
+                    tabpage.Children.Add (page);
+                }
+
+                Navigation.PushAsync (tabpage);
+            };
+
+            var btn5 = new Button (){ Text = "Carousel" };
+            btn5.Clicked += (object sender, EventArgs e)  => 
+            {
+                var tabpage = new CarouselPage ();
+                tabpage.Title = "Persons";
+                foreach(var p in PersonEx.Get ())
+                {
+                    var page = new PersonExPageDB ();
+                    page.BindingContext = p;
+                    tabpage.Children.Add (page);
+                }
+
+                Navigation.PushAsync (tabpage);                
             };
 
             Content = new StackLayout { 
                 Spacing = 10,
-                Children = {btn1, btn2, btn3, btn4}   
+                Children = {btn1, btn2, btn3, btn4, btn5}   
             };
         }
     }
