@@ -33,11 +33,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Page\PersonMasterDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\PersonMasterDetailDB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page\PersonExPageDB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\PlatformPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\IPictureTaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Layout\" />
     <Folder Include="$(MSBuildThisFileDirectory)Page\" />
     <Folder Include="$(MSBuildThisFileDirectory)View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Platform\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Layout\XamlStackLayoutPage.xaml">

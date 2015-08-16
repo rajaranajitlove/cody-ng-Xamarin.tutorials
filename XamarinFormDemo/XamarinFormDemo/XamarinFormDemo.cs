@@ -12,7 +12,7 @@ namespace XamarinFormDemo
             // --- form view ---
             //MainPage = new FirstContentPage();
             //MainPage = new FirstXamlPage();
-            MainPage = new FirstListViewPage(FirstListViewPage.ViewType.CustomType_CustomCell);
+            //MainPage = new FirstListViewPage(FirstListViewPage.ViewType.CustomType_CustomCell);
 
             // --- form layout ---
             //MainPage = new XamlStackLayoutPage();
@@ -21,7 +21,10 @@ namespace XamarinFormDemo
             //MainPage = new RelativeLayoutPage();
 
             // --- form page ---
-            MainPage = new NavigationPage( new HomeNavigationPage() );
+            //MainPage = new NavigationPage( new HomeNavigationPage() );
+
+            // -- platform-specific ---
+            MainPage = new PlatformPage();
         }
 
         protected override void OnStart ()
