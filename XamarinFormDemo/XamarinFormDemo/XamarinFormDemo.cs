@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using Xamarin.Forms;
 
@@ -8,27 +9,19 @@ namespace XamarinFormDemo
     {
         public App ()
         {
-            // The root page of your application
-            //          MainPage = new ContentPage {
-            //              Content = new StackLayout {
-            //                  VerticalOptions = LayoutOptions.Center,
-            //                  Children = {
-            //                      new Label {
-            //                          XAlign = TextAlignment.Center,
-            //                          Text = "Welcome to Xamarin Forms!"
-            //                      }
-            //                  }
-            //              }
-            //          };
-
+            // --- form view ---
             //MainPage = new FirstContentPage();
             //MainPage = new FirstXamlPage();
-            //MainPage = new FirstListViewPage(FirstListViewPage.ViewType.CustomType_CustomCell);
+            MainPage = new FirstListViewPage(FirstListViewPage.ViewType.CustomType_CustomCell);
 
+            // --- form layout ---
             //MainPage = new XamlStackLayoutPage();
             //MainPage = new XamlScrollViewPage();
             //MainPage = new XamlAbsoluteLayoutPage();
-            MainPage = new RelativeLayoutPage();
+            //MainPage = new RelativeLayoutPage();
+
+            // --- form page ---
+            MainPage = new NavigationPage( new HomeNavigationPage() );
         }
 
         protected override void OnStart ()
