@@ -21,12 +21,8 @@ namespace XFormWebService_SqlLite_Demo
             var longitude = double.Parse (this.Longitude.Text);
             var latitude = double.Parse (this.Latitude.Text);
 
-            var username = "demo";
-            var urlFormat = "http://api.geonames.org/findNearByWeatherJSON?lat={0}&lng={1}&username={2}";
 
-            var url = string.Format (urlFormat, latitude, longitude, username);
-
-            await _vm.GetWeatherAsync (url);
+            await _vm.GetWeatherAsync ( latitude, longitude);
 
         }
     }

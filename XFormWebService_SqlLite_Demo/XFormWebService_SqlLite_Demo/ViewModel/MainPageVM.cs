@@ -57,9 +57,19 @@ namespace XFormWebService_SqlLite_Demo
 
         #endregion
 
-
-        public async Task GetWeatherAsync (string url)
+        string GetWeatherUrl(double latitude, double longitude)
         {
+            var username = "demo";
+            var urlFormat = "http://api.geonames.org/findNearByWeatherJSON?lat={0}&lng={1}&username={2}";
+            var url = string.Format (urlFormat, latitude, longitude, username);
+
+            return url;
+        }
+
+        public async Task GetWeatherAsync (double latitude, double longitude)
+        {
+            var url = GetWeatherUrl ( latitude, longitude);
+
             HttpClient client = new HttpClient ();
             client.BaseAddress = new Uri (url);
 
@@ -70,7 +80,37 @@ namespace XFormWebService_SqlLite_Demo
             var jsonResult = response.Content.ReadAsStringAsync ().Result;
             var weather = JsonConvert.DeserializeObject<WeatherResult> (jsonResult);
 
-            SetValues (weather);
+            if (weather != null &&
+               weather.weatherObservation != null) {
+                SetValues (weather);
+
+                var w = weather.weatherObservation;
+              
+                //SaveDb (w);
+                await SaveDbAsync (w);
+            }
+        }
+
+        void SaveDb(WeatherObservation w)
+        {
+             var db = DbRepo.Get;
+
+            var observation = db.GetWeatherObservation (w.Lng, w.Lat);
+            if (observation == null) {
+                w.TimeStamp = DateTime.Now;
+                db.SaveWeatherObservation (w);
+            }
+        }
+
+        async Task SaveDbAsync(WeatherObservation w)
+        {
+            var db = await DbAsynRepo.Get();
+
+            var observation = await db.GetWeatherObservation (w.Lng, w.Lat);
+            if (observation == null) {
+                w.TimeStamp = DateTime.Now;
+                await db.SaveWeatherObservation (w);
+            }
         }
 
         void SetValues(WeatherResult weather)
