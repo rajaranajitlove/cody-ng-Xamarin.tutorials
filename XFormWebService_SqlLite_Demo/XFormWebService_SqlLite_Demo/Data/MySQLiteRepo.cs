@@ -36,7 +36,7 @@ namespace XFormWebService_SqlLite_Demo
             }
         }
 
-        public IEnumerable<WeatherObservation> GetWeatherObservation() {
+        public List<WeatherObservation> GetWeatherObservations() {
             lock (_locker) {
                 return (from c in _conn.Table<WeatherObservation>()
                     select c).ToList();

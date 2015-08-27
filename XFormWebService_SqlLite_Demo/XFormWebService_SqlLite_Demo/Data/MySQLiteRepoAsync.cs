@@ -43,7 +43,7 @@ namespace XFormWebService_SqlLite_Demo
             }
         }
 
-        public async Task<IEnumerable<WeatherObservation>> GetWeatherObservation ()
+        public async Task<List<WeatherObservation>> GetWeatherObservations ()
         {
 
             return  await _conn.Table<WeatherObservation> ().ToListAsync ();

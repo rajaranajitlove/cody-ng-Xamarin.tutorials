@@ -33,9 +33,12 @@ namespace XFormWebService_SqlLite_Demo
 
         }
 
-        public void OnShowAllClicked(Object o, EventArgs e)
+        public async void OnShowAllClicked(Object o, EventArgs e)
         {
-            
+            var p = new WeatherMasterPage ();
+
+           
+            await Navigation.PushAsync( p);
         }
 
 
