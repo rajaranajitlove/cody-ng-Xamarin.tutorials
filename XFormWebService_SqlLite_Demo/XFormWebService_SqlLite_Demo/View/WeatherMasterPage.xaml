@@ -2,18 +2,42 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="XFormWebService_SqlLite_Demo.WeatherMasterPage">
+    x:Class="XFormWebService_SqlLite_Demo.WeatherMasterPage"
+    xmlns:local="clr-namespace:XFormWebService_SqlLite_Demo;assembly=XFormWebService_SqlLite_Demo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="BoldLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="TextColor"
+                    Value="Blue">
+                </Setter>
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold">
+                </Setter>
+            </Style>
+            <!-- dynamic style -->
+            <x:String
+                x:Key="ListCount">
+            </x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout
             Padding="20">
             <Label
                 Font="20"
                 Text="Weather Observation Searches" />
-            <ListView
+            <Label
+                Font="15"
+                Text="Click on an item to see more details" />
+            <local:MyListView
                 x:Name="DataList"
                 ItemsSource="{Binding WeatherObservations}"
                 ItemTapped="OnItemTapped">
-                <ListView.ItemTemplate>
+                <local:MyListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
@@ -34,8 +58,12 @@
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </local:MyListView.ItemTemplate>
+            </local:MyListView>
+            <Label
+                Text="{DynamicResource ListCount}"
+                HorizontalOptions="EndAndExpand"
+                Style="{StaticResource BoldLabelStyle}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

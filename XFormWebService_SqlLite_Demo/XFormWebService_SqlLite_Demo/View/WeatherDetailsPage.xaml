@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XFormWebService_SqlLite_Demo.WeatherDetailsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="DefaultLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="WidthRequest"
+                    Value="120" />
+                <Setter
+                    Property="TextColor"
+                    Value="Black">
+                </Setter>
+            </Style>
+            <Style
+                x:Key="HeaderLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontAttributes"
+                    Value="Bold" />
+                <Setter
+                    Property="WidthRequest"
+                    Value="160" />
+                <Setter
+                    Property="TextColor"
+                    Value="Blue" />
+            </Style>
+            <!-- implicit style -->
+            <Style
+                TargetType="Label"
+                BasedOn="{StaticResource DefaultLabelStyle}">
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+               Padding="30, 0, 0, 0">
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="ID"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding ID}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="WeatherCondition"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding WeatherCondition}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="Elevation"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding Elevation}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="CountryCode"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding CountryCode}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="CloudCode"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding CloudCode}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="Temperature"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding Temperature}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="DewPoint"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding DewPoint}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="WindSpeed"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding WindSpeed}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="Humidity"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding Humidity}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="StationName"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding StationName}" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                VerticalOptions="End">
+                <Label
+                    Text="HectoPascAltimeter"
+                    Style="{StaticResource HeaderLabelStyle}" />
+                <Label
+                    Text="{Binding HectoPascAltimeter}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

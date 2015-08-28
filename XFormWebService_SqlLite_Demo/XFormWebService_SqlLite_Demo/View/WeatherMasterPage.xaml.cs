@@ -19,11 +19,21 @@ namespace XFormWebService_SqlLite_Demo
 
             InitializeComponent ();
         }
-           
 
-
-        public void OnItemTapped(object o, EventArgs e)
+        protected override void OnAppearing ()
         {
+            // set the dynamic style value
+            Resources ["ListCount"] = "Number of previous searches: " + _vm.WeatherObservations.Count.ToString () ;
+
+
+            base.OnAppearing ();
+        }
+
+
+        public void OnItemTapped (object o, ItemTappedEventArgs e)
+        {
+            var data = e.Item as WeatherObservation;
+            Navigation.PushAsync(new WeatherDetailsPage(data));
         }
     }
 }

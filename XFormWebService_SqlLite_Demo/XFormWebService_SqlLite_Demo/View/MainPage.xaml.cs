@@ -45,6 +45,7 @@ namespace XFormWebService_SqlLite_Demo
         protected override void OnAppearing ()
         {
             _done = false;
+            // set the dynamic style value
             Device.StartTimer (TimeSpan.FromSeconds (1), () => {
                 Resources ["CurrentTime"] = DateTime.Now.ToString ();
                 return (!_done);

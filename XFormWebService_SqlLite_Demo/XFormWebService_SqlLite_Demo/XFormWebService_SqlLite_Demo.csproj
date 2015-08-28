@@ -47,6 +47,11 @@
       <DependentUpon>WeatherMasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\WeatherMasterPageVM.cs" />
+    <Compile Include="View\WeatherDetailsPage.xaml.cs">
+      <DependentUpon>WeatherDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomRenderer\MyListView.cs" />
+    <Compile Include="View\CustomRenderer\MyViewCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -86,9 +91,13 @@
     <EmbeddedResource Include="View\WeatherMasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\WeatherDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="View\Trigger\" />
+    <Folder Include="View\CustomRenderer\" />
   </ItemGroup>
 </Project>
