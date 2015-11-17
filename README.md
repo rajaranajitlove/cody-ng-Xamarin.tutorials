@@ -1,8 +1,7 @@
-# Xamarin
-This repo contains a list of projects that I use to learn Xamarin
+This repo contains a list of tutorial projects that I worked on while learning Xamarin
 
-Environment:<br>
-Xamarin Studio version 5.9.5<br>
+<br>
+<br>
 
 <ol>
  <li><b>XamarinFormDemo</b> 
