@@ -1,4 +1,4 @@
-This repo contains a list of tutorial projects that I worked on while learning Xamarin
+This repo contains a list of tutorial projects that I worked on while learning this cross-platform mobile development tool.
 
 <br>
 <br>
